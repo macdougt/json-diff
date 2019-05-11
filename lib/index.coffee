@@ -22,6 +22,8 @@ objectDiff = (obj1, obj2, options = {}) ->
     value2 = obj2[key]
     [subscore, change] = diffWithScore(value1, value2, options)
     if change
+      if options.show and options.show of obj1
+        result[options.show] = obj1[options.show]
       result[key] = change
       # console.log "key #{key} subscore=#{subscore}"
     score += Math.min(20, Math.max(-10, subscore / 5))  # BATMAN!

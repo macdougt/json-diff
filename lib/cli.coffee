@@ -17,6 +17,7 @@ module.exports = (argv) ->
     "  -C, --[no-]color        Colored output"
     "  -j, --raw-json          Display raw JSON encoding of the diff #var(raw)"
     "  -k, --keys-only         Compare only the keys, ignore the differences in values #var(keysOnly)"
+    "  -s, --show FIELD        Show field in results"
   ], argv
 
   process.stderr.write "#{JSON.stringify(options, null, 2)}\n"  if options.verbose
